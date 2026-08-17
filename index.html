@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="WIBEON AI is an intelligent communication platform designed to help people communicate naturally across languages, regions and relationships.">
+
+  <meta name="theme-color" content="#111827">
+
+  <title>WIBEON AI — Think Smart. Feel the Future.</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: #111827;
+      background: #ffffff;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* NAVBAR */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    nav {
+      height: 74px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      font-size: 22px;
+    }
+
+    .brand-logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      background: linear-gradient(135deg, #00c6ff, #7b2cff, #ff3cac);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 900;
+      font-size: 22px;
+      box-shadow: 0 8px 25px rgba(123,44,255,.25);
+    }
+
+    .brand span {
+      color: #111827;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    .nav-links a:hover {
+      color: #6d28d9;
+    }
+
+    .nav-button {
+      padding: 10px 18px;
+      border-radius: 12px;
+      color: white !important;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+    }
+
+    /* HERO */
+
+    .hero {
+      padding: 100px 0 90px;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(37,99,235,.12), transparent 30%),
+        radial-gradient(circle at 80% 30%, rgba(124,58,237,.12), transparent 30%),
+        linear-gradient(180deg, #ffffff, #f8faff);
+    }
+
+    .hero-content {
+      text-align: center;
+      max-width: 850px;
+      margin: auto;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: #eef2ff;
+      color: #5b21b6;
+      font-weight: 700;
+      font-size: 13px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 7vw, 76px);
+      line-height: 1.05;
+      letter-spacing: -3px;
+      margin-bottom: 25px;
+    }
+
+    .gradient-text {
+      background: linear-gradient(90deg, #06b6d4, #2563eb, #7c3aed, #ec4899);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero p {
+      max-width: 720px;
+      margin: auto;
+      color: #4b5563;
+      font-size: 19px;
+    }
+
+    .hero-buttons {
+      margin-top: 35px;
+      display: flex;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 14px;
+      font-weight: 700;
+      transition: .2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      color: white;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      box-shadow: 0 12px 30px rgba(79,70,229,.25);
+    }
+
+    .button-secondary {
+      border: 1px solid #d1d5db;
+      background: white;
+      color: #374151;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 85px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    .section-title h2 {
+      font-size: 38px;
+      margin-bottom: 12px;
+    }
+
+    .section-title p {
+      color: #6b7280;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    /* FEATURES */
+
+    .features {
+      background: #f8fafc;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 30px;
+      transition: .25s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 18px 40px rgba(15,23,42,.08);
+    }
+
+    .feature-icon {
+      width: 52px;
+      height: 52px;
+      border-radius: 15px;
+      background: #eef2ff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      margin-bottom: 18px;
+    }
+
+    .feature-card h3 {
+      margin-bottom: 9px;
+      font-size: 20px;
+    }
+
+    .feature-card p {
+      color: #6b7280;
+      font-size: 15px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      background: white;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+      align-items: center;
+    }
+
+    .about h2 {
+      font-size: 42px;
+      line-height: 1.15;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      color: #6b7280;
+      margin-bottom: 16px;
+    }
+
+    .about-box {
+      border-radius: 28px;
+      padding: 45px;
+      background:
+        linear-gradient(135deg, #111827, #312e81);
+      color: white;
+      box-shadow: 0 25px 60px rgba(17,24,39,.2);
+    }
+
+    .about-box h3 {
+      font-size: 30px;
+      margin-bottom: 15px;
+    }
+
+    .about-box p {
+      color: #dbeafe;
+    }
+
+    /* PRIVACY / TERMS */
+
+    .legal {
+      background: #f8fafc;
+    }
+
+    .legal-card {
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 22px;
+      padding: 35px;
+      margin-bottom: 25px;
+    }
+
+    .legal-card h2 {
+      margin-bottom: 15px;
+      font-size: 28px;
+    }
+
+    .legal-card h3 {
+      margin-top: 20px;
+      margin-bottom: 7px;
+    }
+
+    .legal-card p,
+    .legal-card li {
+      color: #5b6472;
+      font-size: 15px;
+    }
+
+    .legal-card ul {
+      padding-left: 20px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+    }
+
+    .contact-box {
+      max-width: 720px;
+      margin: auto;
+      padding: 45px 30px;
+      border-radius: 25px;
+      background: linear-gradient(135deg, #eef2ff, #faf5ff);
+      border: 1px solid #e5e7eb;
+    }
+
+    .contact-box h2 {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .contact-box p {
+      color: #6b7280;
+      margin-bottom: 20px;
+    }
+
+    .email {
+      display: inline-block;
+      font-weight: 700;
+      color: #4f46e5;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 45px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .footer-brand {
+      max-width: 360px;
+    }
+
+    .footer-brand h3 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      font-size: 14px;
+      color: #94a3b8;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    .copyright {
+      border-top: 1px solid #1e293b;
+      margin-top: 30px;
+      padding-top: 22px;
+      font-size: 13px;
+      color: #64748b;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about h2 {
+        font-size: 34px;
+      }
+
+      section {
+        padding: 65px 0;
+      }
+
+      .section-title h2 {
+        font-size: 32px;
+      }
+
+      .footer-content {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header>
+    <div class="container">
+      <nav>
+
+        <a href="#home" class="brand">
+          <div class="brand-logo">W</div>
+          <span>WIBEON AI</span>
+        </a>
+
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#features">Features</a>
+          <a href="#privacy">Privacy</a>
+          <a href="#terms">Terms</a>
+          <a href="#contact" class="nav-button">Contact</a>
+        </div>
+
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- HERO -->
+
+  <main>
+
+    <section id="home" class="hero">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="badge">
+            ✨ Intelligent Communication Platform
+          </div>
+
+          <h1>
+            Communication that
+            <span class="gradient-text">understands you.</span>
+          </h1>
+
+          <p>
+            WIBEON AI is an intelligent communication platform designed
+            to help people connect naturally across languages, regions,
+            cultures and relationships.
+          </p>
+
+          <div class="hero-buttons">
+            <a href="#features" class="button button-primary">
+              Explore WIBEON AI
+            </a>
+
+            <a href="#about" class="button button-secondary">
+              Learn More
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ABOUT -->
+
+    <section id="about" class="about">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div>
+            <h2>
+              Technology that adapts to the way people communicate.
+            </h2>
+
+            <p>
+              WIBEON AI focuses on making digital communication more
+              natural and accessible by combining intelligent language
+              processing with contextual communication experiences.
+            </p>
+
+            <p>
+              The platform is designed to help users communicate in
+              their preferred language while preserving the intended
+              meaning and conversational context.
+            </p>
+          </div>
+
+          <div class="about-box">
+
+            <h3>WIBEON AI</h3>
+
+            <p>
+              Think Smart. Feel the Future.
+            </p>
+
+            <br>
+
+            <p>
+              Built to make communication simpler, smarter and more
+              inclusive for people everywhere.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- FEATURES -->
+
+    <section id="features" class="features">
+
+      <div class="container">
+
+        <div class="section-title">
+
+          <h2>Powerful Communication Features</h2>
+
+          <p>
+            Intelligent tools designed around the way people actually
+            communicate.
+          </p>
+
+        </div>
+
+
+        <div class="feature-grid">
+
+          <div class="feature-card">
+
+            <div class="feature-icon">🌐</div>
+
+            <h3>AI Translation</h3>
+
+            <p>
+              Communicate across languages with intelligent translation
+              designed to preserve meaning and conversational context.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <div class="feature-icon">💬</div>
+
+            <h3>Natural Conversations</h3>
+
+            <p>
+              Experience communication that can adapt to conversational
+              context and relationship preferences.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <div class="feature-icon">🗣️</div>
+
+            <h3>Regional Communication</h3>
+
+            <p>
+              Support for regional language styles and communication
+              patterns helps make conversations feel more natural.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <div class="feature-icon">🤖</div>
+
+            <h3>AI Assistance</h3>
+
+            <p>
+              Intelligent assistance helps users communicate,
+              understand and interact more effectively.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <div class="feature-icon">🎥</div>
+
+            <h3>Meeting Translation</h3>
+
+            <p>
+              Translation capabilities can help participants understand
+              conversations across different languages.
+            </p>
+
+          </div>
+
+
+          <div class="feature-card">
+
+            <div class="feature-icon">🔒</div>
+
+            <h3>Privacy Focused</h3>
+
+            <p>
+              WIBEON AI is designed with user privacy and responsible
+              handling of account information in mind.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PRIVACY POLICY -->
+
+    <section id="privacy" class="legal">
+
+      <div class="container">
+
+        <div class="legal-card">
+
+          <h2>Privacy Policy</h2>
+
+          <p>
+            <strong>Last updated: August 17, 2026</strong>
+          </p>
+
+          <h3>1. Introduction</h3>
+
+          <p>
+            WIBEON AI respects your privacy. This Privacy Policy explains
+            how information may be handled when you use the WIBEON AI
+            platform and related services.
+          </p>
+
+          <h3>2. Information We May Collect</h3>
+
+          <p>
+            Depending on the features you use, WIBEON AI may process
+            account information, profile information, communication
+            preferences and information required to provide platform
+            functionality.
+          </p>
+
+          <h3>3. Google Sign-In</h3>
+
+          <p>
+            WIBEON AI may provide Google Sign-In as an authentication
+            option. When you choose Google Sign-In, Google may provide
+            basic account information required to authenticate your
+            account, subject to Google's policies and your permissions.
+          </p>
+
+          <h3>4. How Information Is Used</h3>
+
+          <p>
+            Information may be used to authenticate users, maintain
+            accounts, provide requested features, improve reliability,
+            protect the platform and communicate important service
+            information.
+          </p>
+
+          <h3>5. Data Security</h3>
+
+          <p>
+            We take reasonable measures to protect account and platform
+            information from unauthorized access, alteration or misuse.
+          </p>
+
+          <h3>6. Third-Party Services</h3>
+
+          <p>
+            WIBEON AI may use third-party services to provide
+            authentication, infrastructure and other platform functions.
+            Such services may process information according to their own
+            privacy policies.
+          </p>
+
+          <h3>7. Contact</h3>
+
+          <p>
+            If you have questions about this Privacy Policy, contact us
+            at the email address provided below.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- TERMS -->
+
+    <section id="terms" class="legal">
+
+      <div class="container">
+
+        <div class="legal-card">
+
+          <h2>Terms of Service</h2>
+
+          <p>
+            <strong>Last updated: August 17, 2026</strong>
+          </p>
+
+          <h3>1. Acceptance</h3>
+
+          <p>
+            By accessing or using WIBEON AI, you agree to these Terms
+            of Service.
+          </p>
+
+          <h3>2. Use of the Service</h3>
+
+          <p>
+            Users are responsible for using WIBEON AI lawfully and
+            responsibly and for maintaining the security of their
+            accounts.
+          </p>
+
+          <h3>3. AI Features</h3>
+
+          <p>
+            WIBEON AI may provide artificial intelligence features,
+            including translation and communication assistance.
+            AI-generated results may not always be completely accurate
+            and should be reviewed when accuracy is important.
+          </p>
+
+          <h3>4. Account Security</h3>
+
+          <p>
+            Users are responsible for protecting their account
+            credentials and for activity performed through their account.
+          </p>
+
+          <h3>5. Service Changes</h3>
+
+          <p>
+            WIBEON AI may update, modify or improve its services from
+            time to time.
+          </p>
+
+          <h3>6. Contact</h3>
+
+          <p>
+            Questions regarding these Terms may be sent to the contact
+            email listed below.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+
+    <section id="contact" class="contact">
+
+      <div class="container">
+
+        <div class="contact-box">
+
+          <h2>Contact WIBEON AI</h2>
+
+          <p>
+            For questions, support or privacy-related requests,
+            please contact our team.
+          </p>
+
+          <a
+            class="email"
+            href="mailto:nadikudamounika1827@gmail.com">
+            nadikudamounika1827@gmail.com
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    <div class="container">
+
+      <div class="footer-content">
+
+        <div class="footer-brand">
+
+          <h3>WIBEON AI</h3>
+
+          <p>
+            Think Smart. Feel the Future.
+            An intelligent communication platform built
+            for modern communication.
+          </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#features">Features</a>
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms of Service</a>
+          <a href="#contact">Contact</a>
+
+        </div>
+
+      </div>
+
+
+      <div class="copyright">
+
+        © 2026 WIBEON AI. All rights reserved.
+
+      </div>
+
+    </div>
+
+  </footer>
+
+</body>
+</html>
