@@ -900,6 +900,58 @@
     </div>
 
   </footer>
+<!-- SUPABASE AUTH -->
 
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+  const SUPABASE_URL = "https://ixppcvunsrhzkyiaadpq.supabase.co";
+
+  const SUPABASE_ANON_KEY = "sb_publishable_Mf8z6W8NFJETZmA8ox4mFg_W_SmoAPd";
+
+  const supabaseClient = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_ANON_KEY
+  );
+
+  async function signInWithGoogle() {
+    const { error } = await supabaseClient.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: "https://nadikudamounika1827-hue.github.io"
+      }
+    });
+
+    if (error) {
+      console.error("Google Sign-In Error:", error.message);
+      alert("Google Sign-In failed. Please try again.");
+    }
+  }
+
+  async function signOut() {
+    const { error } = await supabaseClient.auth.signOut();
+
+    if (error) {
+      console.error("Sign Out Error:", error.message);
+      return;
+    }
+
+    location.reload();
+  }
+
+  async function checkUser() {
+    const {
+      data: { user }
+    } = await supabaseClient.auth.getUser();
+
+    if (user) {
+      console.log("Logged in:", user.email);
+    } else {
+      console.log("No user logged in");
+    }
+  }
+
+  checkUser();
+</script>
 </body>
 </html>
