@@ -67,18 +67,23 @@
     }
 
     .brand-logo {
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, #00c6ff, #7b2cff, #ff3cac);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 900;
-      font-size: 22px;
-      box-shadow: 0 8px 25px rgba(123,44,255,.25);
-    }
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.brand-logo svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: visible;
+}
 
     .brand span {
       color: #111827;
